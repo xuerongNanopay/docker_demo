@@ -21,5 +21,17 @@ services:
       MYSQL_ROOT_PASSWORD: '123456'
     networks:
       - net
+  mongo:
+    container_name: mongo
+    image: mongo:6.0.6
+    ports:
+      - "27017:27017"
+    volumes:
+      - "$PWD/mongodb/volumn:/data/db"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=123456
+    networks:
+      - net
 networks:
   net:
