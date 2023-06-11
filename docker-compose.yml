@@ -23,7 +23,7 @@ services:
       - net
   mongo:
     container_name: mongo
-    image: mongo:6.0.6
+    image: mongodb/mongodb-community-server:6.0-ubi8 
     ports:
       - "27017:27017"
     volumes:
