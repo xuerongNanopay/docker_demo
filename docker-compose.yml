@@ -21,7 +21,7 @@ services:
       MYSQL_ROOT_PASSWORD: '123456'
     networks:
       - net
-  mongo:
+  mongo:                       #mongosh -u root -p 123456
     container_name: mongo
     image: mongodb/mongodb-community-server:6.0-ubi8 
     ports:
