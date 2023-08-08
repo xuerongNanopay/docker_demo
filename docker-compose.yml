@@ -21,6 +21,18 @@ services:
       MYSQL_ROOT_PASSWORD: '123456'
     networks:
       - net
+  postgres:
+    container_name: postgres
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=123456
+    networks:
+      - net
+    volumes: 
+      - "$PWD/postgres/volumn:/var/lib/postgresql/data"
   mongo:                       #mongosh -u root -p 123456
     container_name: mongo
     image: mongodb/mongodb-community-server:6.0-ubi8 
